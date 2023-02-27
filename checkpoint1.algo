@@ -1,0 +1,29 @@
+BEGIN CHEKPOINT_ALGO
+VAR
+    nbreOfVowels, nbreOfWords, x, i :=0;
+    ch : STRING;
+BEGIN
+    REPEAT
+        Write("Enter a valid ch that ends with a point")
+        Read(ch)
+
+    UNTIL (ch = "")
+    WHILE ( ch[i] <> "." ) DO
+    x = x + 1;
+    IF (
+        ch[i]="a" OR ch[i]="A" OR ch[i]="e" OR ch[i]="E" OR ch[i]="y" OR ch[i]="Y" OR ch[i]="u" OR ch[i]="U" OR ch[i]="i" OR ch[i]="I" OR ch[i]="o" OR ch[i]="O" 
+    ) THEN
+        nbreOfVowels = nbreOfVowels +1;
+    ELSE_IF (ch[i]= " ") THEN
+        nbreOfWords = nbreOfWords +1;
+    END_IF
+    i = i + 1;
+    END_WHILE
+    x = x + 1;
+    IF (ch[i-1] <> " ") THEN
+        nbreOfWords = nbreOfWords +1
+    END_IF
+    Write("Nombre of vowels" , nbreOfVowels)
+    Write("Nombre of words" , nbreOfWords)
+    Write("Length of the sentence" , x)
+END
